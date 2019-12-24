@@ -9,6 +9,7 @@ pylint = "*"
 
 [packages]
 flask = "*"
+dataset = "*"
 
 [requires]
 python_version = "3.7"
