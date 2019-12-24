@@ -70,6 +70,19 @@ def domains_buy():
     return json.dumps({})
 
 
+@app.route("/v4/domains/price", methods=["GET"])
+def domains_price():
+    PRICE = 10
+    PERIOD = 1
+
+    print(
+        'DOMAIN PRICE domain="%s" (price=%s period=%s)'
+        % (request.args["name"], PRICE, PERIOD)
+    )
+
+    return json.dumps({"price": PRICE, "period": PERIOD})
+
+
 if __name__ == "__main__":
     app.debug = True
     app.run(host="0.0.0.0", port="80", threaded=False, processes=1)
