@@ -50,6 +50,26 @@ def domains_delete_record(domain, record_id):
     return json.dumps({})
 
 
+@app.route("/v2/domains/buy", methods=["POST"])
+def domains_buy():
+    print(
+        'BUY DOMAIN domain="%s" expected_price=%s'
+        % (request.json["name"], request.json["expectedPrice"])
+    )
+
+    record = {}
+    record.update(
+        {
+            "domain": request.json["name"],
+            "expected_price": request.json["expectedPrice"],
+        }
+    )
+
+    db["domains"].insert(record)
+
+    return json.dumps({})
+
+
 if __name__ == "__main__":
     app.debug = True
     app.run(host="0.0.0.0", port="80", threaded=False, processes=1)
