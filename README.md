@@ -1,3 +1,5 @@
+> This repository is in __Work in Progress__ state. If you need something, create an [issue](https://github.com/ondrejsika/zeit-api-mock/issues/new)
+
 # Zeit API Mock
 
     2019 Ondrej Sika <ondrej@ondrejsika.com>
