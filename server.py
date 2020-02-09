@@ -57,6 +57,11 @@ def domains_buy():
         % (request.json["name"], request.json["expectedPrice"])
     )
 
+    if request.json["name"] == "google.com":
+        return json.dumps(
+            {"error": {"code": "not_available", "message": "Domain is not available"}}
+        )
+
     record = {}
     record.update(
         {
