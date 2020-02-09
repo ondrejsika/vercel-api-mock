@@ -50,7 +50,7 @@ def domains_delete_record(domain, record_id):
     return json.dumps({})
 
 
-@app.route("/v2/domains/buy", methods=["POST"])
+@app.route("/v4/domains/buy", methods=["POST"])
 def domains_buy():
     print(
         'BUY DOMAIN domain="%s" expected_price=%s'
