@@ -70,6 +70,15 @@ def domains_buy():
     return json.dumps({})
 
 
+@app.route("/v4/domains/<domain>", methods=["DELETE"])
+def delete_domain(domain):
+    print('DELETE DOMAIN domain="%s"' % domain)
+
+    db["domains"].delete(domain=domain)
+
+    return json.dumps({})
+
+
 @app.route("/v4/domains/price", methods=["GET"])
 def domains_price():
     PRICE = 10
