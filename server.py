@@ -2,7 +2,8 @@ import os
 import hashlib
 import json
 import dataset
-from flask import Flask, request
+import tabulate
+from flask import Flask, request, Response
 
 
 app = Flask(__name__)
@@ -95,6 +96,45 @@ def domains_price():
     )
 
     return json.dumps({"price": PRICE, "period": PERIOD})
+
+
+@app.route("/", methods=["GET"])
+def index():
+    response = []
+    response.append(
+    """
+Domains
+=======
+"""
+    )
+
+    response.append(
+        tabulate.tabulate(
+            [(row["domain"], row["expected_price"]) for row in db["domains"].find()],
+            headers=["domain", "expected_price"],
+        )
+    )
+
+
+    response.append(
+    """
+DNS Records
+===========
+"""
+    )
+
+    response.append(
+        tabulate.tabulate(
+            [
+                (row["domain"], row["type"], row["name"], row["value"])
+                for row in db["records"].find()
+            ],
+            headers=["domain", "type", "name", "value"],
+        )
+    )
+    return Response("\n".join(response), mimetype='text/plain')
+
+
 
 
 if __name__ == "__main__":
