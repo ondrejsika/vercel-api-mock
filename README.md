@@ -1,18 +1,17 @@
-> This repository is in __Work in Progress__ state. If you need something, create an [issue](https://github.com/ondrejsika/zeit-api-mock/issues/new)
+> This repository is in **Work in Progress** state. If you need something, create an [issue](https://github.com/ondrejsika/vercel-api-mock/issues/new)
 
-# Zeit API Mock
+# Vercel API Mock
 
     2019 Ondrej Sika <ondrej@ondrejsika.com>
-    https://github.com/ondrejsika/zeit-api-mock
+    https://github.com/ondrejsika/vercel-api-mock
 
-Simple [Zeit.co API](https://zeit.co/docs/api) mock for [terraform-plugin-zeit](https://github.com/ondrejsika/terraform-plugin-zeit) development.
-
+Simple [Vercel API](https://vercel.com/docs/api) mock for [terraform-plugin-vercel](https://github.com/ondrejsika/terraform-plugin-vercel) development.
 
 ## Install
 
 ```
-git clone git@github.com:ondrejsika/zeit-api-mock.git
-cd zeit-api-mock
+git clone git@github.com:ondrejsika/vercel-api-mock.git
+cd vercel-api-mock
 pipenv install
 ```
 
